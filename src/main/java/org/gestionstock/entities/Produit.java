@@ -30,6 +30,14 @@ public class Produit implements Serializable {
 		this.prix = prix;
 		this.photo = photo;
 	}
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
 	public String getNom() {
 		return nom;
 	}
@@ -50,7 +58,7 @@ public class Produit implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "Produit [id=" + id + ", nom=" + nom + ", prix=" + prix + ", photo=" + photo + "]";
+		return "Produit [nom=" + nom + ", prix=" + prix + ", photo=" + photo + "]";
 	}
 	
 	
