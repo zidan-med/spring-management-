@@ -24,6 +24,7 @@ public class GestionStockApplication {
 				produitRepository.save(new Produit("Chaise",40, "photo"));
 				produitRepository.save(new Produit("PC", 10900, "photo"));
 				produitRepository.save(new Produit("Ramette", 40, "photo"));
+				
 				Page<Produit> prod1 =
 						produitRepository.findAll(PageRequest.of(0, 10));
 						prod1.forEach(p->System.out.println("Nom du produit est : " +
