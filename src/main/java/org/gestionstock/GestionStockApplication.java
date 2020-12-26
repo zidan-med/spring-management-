@@ -20,9 +20,9 @@ public class GestionStockApplication {
 		ApplicationContext ctx =SpringApplication.run(GestionStockApplication.class, args);
 		ProduitRepository produitRepository =
 				ctx.getBean(ProduitRepository.class);
-				produitRepository.save(new Produit("Table", 150, "photo"));
+				produitRepository.save(new Produit("Tableau", 150, "photo"));
 				produitRepository.save(new Produit("Chaise",40, "photo"));
-				produitRepository.save(new Produit("PC", 10900, "photo"));
+				produitRepository.save(new Produit("Ordinateur Portable", 10900, "photo"));
 				produitRepository.save(new Produit("Ramette", 40, "photo"));
 				
 				Page<Produit> prod1 =

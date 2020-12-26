@@ -5,6 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
+
 @Entity
 public class Produit implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -12,6 +16,8 @@ public class Produit implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	@Column(name="NOM", length=30)
+	@NotEmpty
+	@Size(min=5, max=50)
 	private String nom;
 	private double prix;
 	private String photo;
