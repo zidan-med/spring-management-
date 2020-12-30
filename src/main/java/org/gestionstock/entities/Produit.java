@@ -1,12 +1,9 @@
 package org.gestionstock.entities;
 import java.io.Serializable;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
 
 
 @Entity
@@ -14,59 +11,65 @@ public class Produit implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-	@Column(name="NOM", length=30)
-	@NotEmpty
-	@Size(min=5, max=50)
-	private String nom;
+	private Long id;
+	private String designation;
 	private double prix;
-	private String photo;
+	private String quantite;
 	public Produit() {
 		super();
 		}
 
-	public Produit(long id, String nom, double prix, String photo) {
+	public Produit(long id, String designation, double prix, String quantite) {
 		this.id = id;
-		this.nom = nom;
+		this.designation = designation;
 		this.prix = prix;
-		this.photo = photo;
+		this.quantite = quantite;
 	}
 
-	public Produit(String nom, double prix, String photo) {
-		this.nom = nom;
+	public Produit(String designation, double prix, String quantite) {
+		this.designation = designation;
 		this.prix = prix;
-		this.photo = photo;
+		this.quantite = quantite;
+		
 	}
-	public long getId() {
+
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public String getNom() {
-		return nom;
+	public String getDesignation() {
+		return designation;
 	}
-	public void setNom(String nom) {
-		this.nom = nom;
+
+	public void setDesignation(String designation) {
+		this.designation = designation;
 	}
+
 	public double getPrix() {
 		return prix;
 	}
+
 	public void setPrix(double prix) {
 		this.prix = prix;
 	}
-	public String getPhoto() {
-		return photo;
+
+	public String getQuantite() {
+		return quantite;
 	}
-	public void setPhoto(String photo) {
-		this.photo = photo;
+
+	public void setQuantite(String quantite) {
+		this.quantite = quantite;
 	}
+
 	@Override
 	public String toString() {
-		return "Produit [nom=" + nom + ", prix=" + prix + ", photo=" + photo + "]";
+		return "Produit [id=" + id + ", designation=" + designation + ", prix=" + prix + ", quantite="
+				+ quantite + "]";
 	}
-	
+
 	
 }
