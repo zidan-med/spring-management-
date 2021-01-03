@@ -1,10 +1,10 @@
-package org.gestionstock;
+package org.gestionstock.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class GestionStockApplicationTests {
+class DemoApplicationTests {
 
     @Test
     void contextLoads() {
